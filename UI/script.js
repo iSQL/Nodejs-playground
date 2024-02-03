@@ -1,5 +1,5 @@
-let endpoint = "https://haircutreservation.azurewebsites.net:3000";
-//let endpoint = "localhost:3000";
+const endpoint = 'https://haircutreservation.azurewebsites.net';
+//const endpoint = `http://localhost:3000`;
 
 document.getElementById("reservationForm").addEventListener("submit", function(event){
     event.preventDefault();
@@ -40,3 +40,4 @@ function fetchReservations() {
 
 // Call this function on page load and after making a reservation
 fetchReservations();
+

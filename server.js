@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const prodUrl = "https://haircutreservation.azurewebsites.net";
-//const prodUrl = "localhost";
+//const prodUrl = "http://localhost";
 
 // File path
 const FILE_PATH = './reservations.json';
@@ -15,6 +15,10 @@ const FILE_PATH = './reservations.json';
 function readReservations() {
     return JSON.parse(fs.readFileSync(FILE_PATH, 'utf8'));
 }
+// Get node server port
+app.get('/api/port', (req, res) => {
+    res.json({ port });
+});
 
 // Write reservations to file
 function writeReservations(reservations) {
@@ -23,6 +27,7 @@ function writeReservations(reservations) {
 
 // Endpoint to create a new reservation
 app.post('/reserve', (req, res) => {
+    console.log('Received a POST request to /reserve');
     const { name, date, time } = req.body;
     if (!name || !date || !time) {
         return res.status(400).send({ message: 'Missing reservation details' });
@@ -37,6 +42,7 @@ app.post('/reserve', (req, res) => {
 
 // Endpoint to list all reservations
 app.get('/reservations', (req, res) => {
+    console.log('Received a GET request to /reservations');
     const reservations = readReservations();
     res.send(reservations);
 });
@@ -51,5 +57,4 @@ function readReservations() {
     }
 }
 
-app.listen(port, () => console.log(`Server listening at ${prodUrl}:${port}`));
-
+app.listen(port, () => console.log(`Server listening at ${prodUrl}:${port}`));s

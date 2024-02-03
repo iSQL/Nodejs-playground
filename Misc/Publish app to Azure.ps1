@@ -7,4 +7,4 @@ $appName ="HairCutReservation"
 #az webapp create --resource-group $rgName  --plan $servicePlan --name $appName
 
 
-az webapp config appsettings list --name $appName --resource-group $rgName --query "[?name=='WEBSITE_NODE_DEFAULT_VERSION'].value"
+#az webapp config appsettings list --name $appName --resource-group $rgName --query "[?name=='WEBSITE_NODE_DEFAULT_VERSION'].value"
