@@ -5,8 +5,8 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
-//const prodUrl = "https://haircutreservation.azurewebsites.net";
-const prodUrl = "localhost";
+const prodUrl = "https://haircutreservation.azurewebsites.net";
+//const prodUrl = "localhost";
 
 // File path
 const FILE_PATH = './reservations.json';
