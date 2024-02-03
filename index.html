@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Haircut Reservation</title>
+    <link rel="stylesheet" type="text/css" href="ui/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Haircut Reservation Form</h2>
+        <form id="reservationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <input type="submit" value="Reserve">
+        </form>
+        <div id="confirmation"></div>
+        <div id="reservationsList">
+        <h3>Current Reservations</h3>
+        <ul id="reservations"></ul>
+  </div>
+    </div>
+    <script src="ui/script.js"></script>
+</body>
+</html>
