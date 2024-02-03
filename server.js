@@ -57,4 +57,4 @@ function readReservations() {
     }
 }
 
-app.listen(port, () => console.log(`Server listening at ${prodUrl}:${port}`));s
+app.listen(port, () => console.log(`Server listening at ${prodUrl}:${port}`));
