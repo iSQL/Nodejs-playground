@@ -5,6 +5,8 @@ const port = 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
+//const prodUrl = "https://haircutreservation.azurewebsites.net";
+const prodUrl = "localhost";
 
 // File path
 const FILE_PATH = './reservations.json';
@@ -49,5 +51,5 @@ function readReservations() {
     }
 }
 
-app.listen(port, () => console.log(`Server listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`Server listening at ${prodUrl}:${port}`));
 

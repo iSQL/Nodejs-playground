@@ -1,3 +1,6 @@
+let endpoint = "https://haircutreservation.azurewebsites.net:3000";
+//let endpoint = "localhost:3000";
+
 document.getElementById("reservationForm").addEventListener("submit", function(event){
     event.preventDefault();
 
@@ -5,7 +8,7 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
     let date = document.getElementById("date").value;
     let time = document.getElementById("time").value;
 
-    fetch('http://localhost:3000/reserve', {
+    fetch(`${endpoint}/reserve`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -21,7 +24,7 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
 });
 
 function fetchReservations() {
-    fetch('http://localhost:3000/reservations')
+    fetch(`${endpoint}/reservations`)
         .then(response => response.json())
         .then(data => {
             const list = document.getElementById('reservations');
